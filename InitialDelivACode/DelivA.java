@@ -5,96 +5,96 @@ import java.util.ArrayList;
 
 public class DelivA {
 
-	File inputFile;
-	File outputFile;
-	PrintWriter output;
-	Graph g;
+    File inputFile;
+    File outputFile;
+    PrintWriter output;
+    Graph g;
 
-	public DelivA( File in, Graph gr ) {
-		inputFile = in;
-		g = gr;
+    public DelivA(File in, Graph gr) {
+        inputFile = in;
+        g = gr;
 
-		// Get output file name.
-		String inputFileName = inputFile.toString();
-		String baseFileName = inputFileName.substring( 0, inputFileName.length()-4 ); // Strip off ".txt"
-		String outputFileName = baseFileName.concat( "_out.txt" );
-		outputFile = new File( outputFileName );
-		if ( outputFile.exists() ) {    // For retests
-			outputFile.delete();
-		}
+        // Get output file name.
+        String inputFileName = inputFile.toString();
+        String baseFileName = inputFileName.substring(0, inputFileName.length() - 4); // Strip off ".txt"
+        String outputFileName = baseFileName.concat("_out.txt");
+        outputFile = new File(outputFileName);
+        if (outputFile.exists()) {    // For retests
+            outputFile.delete();
+        }
 
-		try {
-			output = new PrintWriter(outputFile);
-		}
-		catch (Exception x ) {
-			System.err.format("Exception: %s%n", x);
-			System.exit(0);
-		}
+        try {
+            output = new PrintWriter(outputFile);
+        } catch (Exception x) {
+            System.err.format("Exception: %s%n", x);
+            System.exit(0);
+        }
 
-		// Find start node
-		ArrayList<Node> nodeList = gr.getNodeList();
-		int startNodeIndex = -1;
-		for (Node node: nodeList) {
-			if ("S".equalsIgnoreCase(node.getVal())){
-				startNodeIndex = nodeList.indexOf(node);
-			}
-		}
-		// Make map from start node back to itself
-		ArrayList<String> map = new ArrayList<String>();
-		for (int i = startNodeIndex; i < nodeList.size() ; i++) {
-			map.add(nodeList.get(i).abbrev);
-		}
-		if(startNodeIndex > 0){
-			for (int i = 0; i < startNodeIndex; i++) {
-				map.add(nodeList.get(i).abbrev);
-			}
-		}
-		map.add(nodeList.get(startNodeIndex).getAbbrev());
-		// Try to traverse the graph using the node order from the map
-		boolean possible = true;
-		while (possible){
-			// check if the current node can get to the next node
-		}
-		// If the traversal succeeds print out the map
-		// if the traversal fails print "Is not possible."
+        // Find start node
+        ArrayList<Node> nodeList = gr.getNodeList();
+        int startNodeIndex = -1;
+        for (Node node : nodeList) {
+            if ("S".equalsIgnoreCase(node.getVal())) {
+                startNodeIndex = nodeList.indexOf(node);
+            }
+        }
+        // Make map from start node back to itself
+        ArrayList<Node> map = new ArrayList<Node>();
+        for (int i = startNodeIndex; i < nodeList.size(); i++) {
+            map.add(nodeList.get(i));
+        }
+        if (startNodeIndex > 0) {
+            for (int i = 0; i < startNodeIndex; i++) {
+                map.add(nodeList.get(i));
+            }
+        }
+        map.add(nodeList.get(startNodeIndex));
 
-		System.out.println( "DelivA:  To be implemented");
-		output.println( "DelivA:  To be implemented");
-		output.flush();
-		int indexOfS = getIndex();
-//		tsp();
+        // Try to traverse the graph using the node order from the map
+        boolean traversalPossible = true;
+        for (int i = 0; i < map.size() - 1; i++) {
+            boolean canMoveToNextNode = false;
+            Node currentNode = map.get(i);
+            Node nextNode = map.get(i + 1);
 
-	}
+            ArrayList<Edge> outgoingEdges = currentNode.getOutgoingEdges();
 
-	//Gives us the index.
-	public int getIndex(){
-		int size = this.g.getNodeList().size();
-		for(int i = 0; i < size; i++){
-			//Checking to see if we got start node
-			if(this.g.getNodeList().get(i).getVal().equals("S")){
-				return i;
-			}
-		}
-		return -1;
-	}
+            for (Edge edge : outgoingEdges) {
+                if (nextNode.getAbbrev().equalsIgnoreCase(edge.getHead().getAbbrev())) {
+                    canMoveToNextNode = true;
+                    break; // leave the outgoing edge for loop
+                }
+            }
 
-//	public void tsp(){
-//		int distance = 0;
-//		int start = getIndex();
-//		int size = this.g.getNodeList().size();
-//		for(int i = start; i < size; i++){
-//			if(g.nodeList.get(i).incomingEdges.equals("~") || g.nodeList.get(i).outgoingEdges.equals("~")){
-//				return;
-//			}
-//			else if (!(g.nodeList.get(i).incomingEdges.equals("~") || g.nodeList.get(i).outgoingEdges.equals("~"))){
-//				distance += g.edgeList.get(i).dist;
-//				System.out.println(distance);
-//			}
-//		}
-//
-//		}
+            if (canMoveToNextNode == false) {
+                traversalPossible = false;
+                break; // stop checking if the graph can be traversed
+            }
+        }
 
-	}
+        StringBuilder outputMessage = new StringBuilder();
+        outputMessage.append("TSP tour:\n");
+        // If the traversal succeeds print out the map
+        if (traversalPossible) {
+            for (int i = 0; i < map.size() - 1; i++) {
+                String currentCityInMap = String.format("%s--> ", map.get(i).getAbbrev());
+                outputMessage.append(currentCityInMap);
+            }
+            //This is the last city in the map
+            String currentCityInMap = String.format("%s", map.get(map.size() - 1).getAbbrev());
+            outputMessage.append(currentCityInMap);
+        } else
+            outputMessage.append("Is not possible.");
+        // if the traversal fails print "Is not possible."
+        //Line that writes it to console.
+        System.out.println(outputMessage);
+        //This writes to the file.
+        output.println(outputMessage);
+        //Ensures that the file gets wrote.
+        output.flush();
+    }
+
+}
 
 
 

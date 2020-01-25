@@ -1,0 +1,2 @@
+TSP tour:
+ALe--> Alx--> Aus--> Bau--> Bem--> Bra--> Clq--> Crk--> DLk--> Dul--> EGF--> Ely--> Fmt--> Frb--> FFl--> GPo--> GRa--> Hib--> Hut--> IFl--> LCr--> Lit--> LFa--> Luv--> Mkt--> Mar--> Mpl--> Mvo--> Mrh--> Mor--> NUl--> Nfd--> Noy--> Owa--> Pip--> RWi--> Rch--> SCl--> SPl--> SPt--> Skp--> Stl--> TRF--> Vir--> Was--> Wlm--> Wnd--> Win--> Wrt--> ALe
