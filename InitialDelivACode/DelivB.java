@@ -9,6 +9,7 @@ public class DelivB {
 	File outputFile;
 	PrintWriter output;
 	Graph g;
+	private int counter = 1;
 	
 	public DelivB( File in, Graph gr ) {
 		inputFile = in;
@@ -32,9 +33,7 @@ public class DelivB {
 		}
 
 		// DFS with discovery and finish times
-		int startNodeIndex = gr.getStartNodeIndex();
-		Node start = gr.getNodeList().get(startNodeIndex);
-		DFSRecursive(gr, start);
+
 
 		// Classify the edges
 
@@ -53,6 +52,27 @@ public class DelivB {
 				DFSRecursive(graph, edge.getHead());
 			}
 		}
+	}
+	//Grab a node.
+	public void DFS(Node start){
+		// 1. Visit node
+		start.setVisited(true);
+		//2. Setting the time discovered via an counter instance variable.
+		start.setTimeDiscovered(counter);
+		//3.Incrementing the counter.
+		counter++;
+		//4. If node is attached to Node(start) and is unvisited then call DFS on it.
+		for(Edge edge: start.getOutgoingEdges()){
+			Node nextNode = edge.getHead();
+			if(!nextNode.isVisited()){
+				DFS(nextNode);
+			}
+		}
+		//5.Record the time finished
+		start.setTimeDiscovered(counter);
+		//Increment that counter
+		counter++;
+
 	}
 
 

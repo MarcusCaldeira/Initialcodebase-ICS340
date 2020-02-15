@@ -10,25 +10,9 @@ public class Node {
 	ArrayList<Edge> outgoingEdges;  // tail is initial? and head is terminal?
 	ArrayList<Edge> incomingEdges;
 	private boolean visited;
-
-	public int getTimeDiscovered() {
-		return timeDiscovered;
-	}
-
-	public void setTimeDiscovered(int timeDiscovered) {
-		this.timeDiscovered = timeDiscovered;
-	}
-
-	public int getTimeFinished() {
-		return timeFinished;
-	}
-
-	public void setTimeFinished(int timeFinished) {
-		this.timeFinished = timeFinished;
-	}
-
 	private int timeDiscovered;
 	private int timeFinished;
+
 
 	public Node( String theAbbrev ) {
 		setAbbrev( theAbbrev );
@@ -79,12 +63,27 @@ public class Node {
 		incomingEdges.add( e );
 	}
 
-	public void setVisited() {
-		this.visited = true;
+	public void setVisited(boolean visited) {
+		this.visited = visited;
 	}
 
 	public boolean isVisited() {
 		return visited;
+	}
+	public int getTimeDiscovered() {
+		return timeDiscovered;
+	}
+
+	public void setTimeDiscovered(int timeDiscovered) {
+		this.timeDiscovered = timeDiscovered;
+	}
+
+	public int getTimeFinished() {
+		return timeFinished;
+	}
+
+	public void setTimeFinished(int timeFinished) {
+		this.timeFinished = timeFinished;
 	}
 
 
