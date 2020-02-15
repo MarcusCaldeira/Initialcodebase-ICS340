@@ -1,2 +1,0 @@
-TSP tour:
-Du--> El--> Ap--> Ba--> Ca--> Du

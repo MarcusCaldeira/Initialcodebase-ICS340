@@ -50,4 +50,5 @@ public class Edge {
 			dist = Integer.MAX_VALUE;
 		}
 	}
+
 }

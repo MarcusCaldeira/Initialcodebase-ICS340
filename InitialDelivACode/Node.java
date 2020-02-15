@@ -7,13 +7,34 @@ public class Node {
 	String name;
 	String val;  // The value of the Node
 	String abbrev;  // The abbreviation for the Node
-	ArrayList<Edge> outgoingEdges;  
+	ArrayList<Edge> outgoingEdges;  // tail is initial? and head is terminal?
 	ArrayList<Edge> incomingEdges;
-	
+	private boolean visited;
+
+	public int getTimeDiscovered() {
+		return timeDiscovered;
+	}
+
+	public void setTimeDiscovered(int timeDiscovered) {
+		this.timeDiscovered = timeDiscovered;
+	}
+
+	public int getTimeFinished() {
+		return timeFinished;
+	}
+
+	public void setTimeFinished(int timeFinished) {
+		this.timeFinished = timeFinished;
+	}
+
+	private int timeDiscovered;
+	private int timeFinished;
+
 	public Node( String theAbbrev ) {
 		setAbbrev( theAbbrev );
 		val = null;
 		name = null;
+		visited = false;
 		outgoingEdges = new ArrayList<Edge>();
 		incomingEdges = new ArrayList<Edge>();
 	}
@@ -57,5 +78,18 @@ public class Node {
 	public void addIncomingEdge( Edge e ) {
 		incomingEdges.add( e );
 	}
-	
+
+	public void setVisited() {
+		this.visited = true;
+	}
+
+	public boolean isVisited() {
+		return visited;
+	}
+
+
+	@Override
+	public String toString() {
+		return String.format("%s (%s)", name, abbrev);
+	}
 }

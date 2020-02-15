@@ -178,6 +178,7 @@ public class Prog340 extends JPanel implements ActionListener {
 				if ( !splitString[i].equals("~") ) {
 					Node head = nodeList.get(i-2);
 					Edge e = new Edge( n, head, splitString[i] );
+					e.setDist(splitString[i]);
 					g.addEdge( e );
 					n.addOutgoingEdge( e );
 					head.addIncomingEdge( e );

@@ -1,2 +1,3 @@
 TSP tour:
 LA--> Mia--> Min--> NY--> SF--> Sea--> Was--> Atl--> Bos--> Chi--> Dal--> Den--> LA
+Distance = 15161

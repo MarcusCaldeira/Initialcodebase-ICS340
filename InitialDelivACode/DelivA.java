@@ -14,6 +14,7 @@ public class DelivA {
         inputFile = in;
         g = gr;
 
+
         // Get output file name.
         String inputFileName = inputFile.toString();
         String baseFileName = inputFileName.substring(0, inputFileName.length() - 4); // Strip off ".txt"
@@ -32,12 +33,8 @@ public class DelivA {
 
         // Find start node
         ArrayList<Node> nodeList = gr.getNodeList();
-        int startNodeIndex = -1;
-        for (Node node : nodeList) {
-            if ("S".equalsIgnoreCase(node.getVal())) {
-                startNodeIndex = nodeList.indexOf(node);
-            }
-        }
+        int startNodeIndex = gr.getStartNodeIndex();
+
         // Make map from start node back to itself
         ArrayList<Node> map = new ArrayList<Node>();
         for (int i = startNodeIndex; i < nodeList.size(); i++) {
@@ -52,6 +49,7 @@ public class DelivA {
 
         // Try to traverse the graph using the node order from the map
         boolean traversalPossible = true;
+        int totalDistance = 0;
         for (int i = 0; i < map.size() - 1; i++) {
             boolean canMoveToNextNode = false;
             Node currentNode = map.get(i);
@@ -62,6 +60,7 @@ public class DelivA {
             for (Edge edge : outgoingEdges) {
                 if (nextNode.getAbbrev().equalsIgnoreCase(edge.getHead().getAbbrev())) {
                     canMoveToNextNode = true;
+                    totalDistance += edge.getDist();
                     break; // leave the outgoing edge for loop
                 }
             }
@@ -81,8 +80,9 @@ public class DelivA {
                 outputMessage.append(currentCityInMap);
             }
             //This is the last city in the map
-            String currentCityInMap = String.format("%s", map.get(map.size() - 1).getAbbrev());
+            String currentCityInMap = String.format("%s\n", map.get(map.size() - 1).getAbbrev());
             outputMessage.append(currentCityInMap);
+            outputMessage.append("Distance = " + totalDistance);
         } else
             outputMessage.append("Is not possible.");
         // if the traversal fails print "Is not possible."
