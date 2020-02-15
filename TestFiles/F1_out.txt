@@ -1,0 +1,3 @@
+TSP tour:
+Ap--> Ba--> Ca--> Du--> El--> Ap
+Distance = 33

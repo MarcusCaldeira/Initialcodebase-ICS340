@@ -1,8 +1,2 @@
-DFS of Graph
-Node      Dist      Finish    
-B          1          10        
-D          2          9         
-E          3          8         
-C          4          7         
-A          5          6         
-
+TSP tour:
+Is not possible.

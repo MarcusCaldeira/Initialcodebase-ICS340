@@ -55,5 +55,18 @@ public class Graph {
         }
         return outputMessage.toString();
     }
+    public String printEdgeClassification(){
+        StringBuilder edgeOutputMessage = new StringBuilder();
+        String header = String.format("%-5s%-5s\n","Edge","Classification:");
+        String header2 = String.format("%-5s%-5s\n","Edge","Type");
+        edgeOutputMessage.append(header);
+        edgeOutputMessage.append(header2);
+        for (int i = 0; i < edgeList.size(); i++) {
+            Edge edge = edgeList.get(i);
+            String currentCityInMap = String.format("%s->%s %-5s\n", edge.getTail().getName(), edge.getHead().getName(),edge.getEdgeType());
+            edgeOutputMessage.append(currentCityInMap);
+        }
+        return edgeOutputMessage.toString();
+    }
 
 }

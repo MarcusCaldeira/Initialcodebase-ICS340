@@ -34,6 +34,7 @@ public class DelivB {
 			System.err.format("Exception: %s%n", x);
 			System.exit(0);
 		}
+		StringBuilder delivBOutput = new StringBuilder();
 
 
 		//Got starting node.
@@ -47,13 +48,35 @@ public class DelivB {
 				return node1.getTimeDiscovered() - node2.getTimeDiscovered();
 			}
 		});
-		
-		// Classify the edges
+		delivBOutput.append(gr.printNodeList()+ "\n");
+		// Classify the non tree edges
+		for(Edge edge: gr.getEdgeList()){
+			Node v = edge.getHead();
+			Node u = edge.getTail();
+			if(edge.getEdgeType() == null){
+				if(u.getTimeDiscovered() > v.getTimeDiscovered() && u.getTimeFinished() < v.getTimeFinished()){
+					edge.setEdgeType("Back");
+				}
+				if(u.getTimeDiscovered() < v.getTimeDiscovered() && u.getTimeFinished() > v.getTimeFinished()){
+					edge.setEdgeType("Forward");
+				}
+				if(u.getTimeDiscovered() > v.getTimeDiscovered() && u.getTimeFinished() > v.getTimeFinished()){
+					edge.setEdgeType("Cross");
+				}
+			}
+		}
+		Collections.sort(gr.getEdgeList(), new Comparator<Edge>() {
+			@Override
+			public int compare(Edge edge1, Edge edge2) {
+				return edge1.getTail().getName().compareTo(edge2.getTail().getName());
+			}
+		});
+		delivBOutput.append(gr.printEdgeClassification()+ "\n");
 
 		// Quantify strongly connected components and display the components
 
-		System.out.println(gr.printNodeList());
-		output.println(gr.printNodeList());
+		System.out.println(delivBOutput);
+		output.println(delivBOutput);
 		//Ensures the file gets wrote.
 		output.flush();
 
@@ -77,6 +100,8 @@ public class DelivB {
 		for(Edge edge: start.getOutgoingEdges()){
 			Node nextNode = edge.getHead();
 			if(!nextNode.isVisited()){
+				//Classify the Tree Edges.
+				edge.setEdgeType("Tree");
 				DFS(nextNode);
 			}
 		}
