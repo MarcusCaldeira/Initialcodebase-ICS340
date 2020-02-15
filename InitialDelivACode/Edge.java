@@ -7,6 +7,16 @@ public class Edge {
 	int dist;
 	Node tail;
 	Node head;
+
+	public String getEdgeType() {
+		return edgeType;
+	}
+
+	public void setEdgeType(String edgeType) {
+		this.edgeType = edgeType;
+	}
+
+	private String edgeType;
 	
 	public Edge( Node tailNode, Node headNode, String theLabel ) {
 		setLabel( theLabel );

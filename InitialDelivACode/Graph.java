@@ -40,5 +40,20 @@ public class Graph {
         }
         return startNodeIndex;
     }
+    public Node getStartingNode(){
+        return nodeList.get(getStartNodeIndex());
+    }
+    public String printNodeList(){
+        StringBuilder outputMessage = new StringBuilder();
+        outputMessage.append("DFS of Graph\n");
+        String header = String.format("%-10s%-10s%-10s\n","Node","Dist","Finish");
+        outputMessage.append(header);
+        for (int i = 0; i < nodeList.size(); i++) {
+            Node currentNode = nodeList.get(i);
+            String currentCityInMap = String.format("%-10s %-10d %-10d\n", currentNode.getName(), currentNode.getTimeDiscovered(), currentNode.getTimeFinished());
+            outputMessage.append(currentCityInMap);
+        }
+        return outputMessage.toString();
+    }
 
 }

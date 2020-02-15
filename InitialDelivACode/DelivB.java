@@ -1,5 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 // Class DelivB does the work for deliverable DelivB of the Prog340
 
@@ -32,26 +35,28 @@ public class DelivB {
 			System.exit(0);
 		}
 
+
+		//Got starting node.
+		Node start = gr.getStartingNode();
 		// DFS with discovery and finish times
-
-
+		DFS(start);
+		//Sort the node list by discovery time.
+		Collections.sort(gr.getNodeList(), new Comparator<Node>() {
+			@Override
+			public int compare(Node node1, Node node2) {
+				return node1.getTimeDiscovered() - node2.getTimeDiscovered();
+			}
+		});
+		
 		// Classify the edges
 
 		// Quantify strongly connected components and display the components
 
-		System.out.println( "DelivB:  To be implemented");
-		output.println( "DelivB:  To be implemented");
-	}
+		System.out.println(gr.printNodeList());
+		output.println(gr.printNodeList());
+		//Ensures the file gets wrote.
+		output.flush();
 
-	public void DFSRecursive(Graph graph, Node start){
-		start.setVisited();
-		System.out.print(start.toString() + " ");
-		for (Edge edge : start.getOutgoingEdges()
-			 ) {
-			if(!edge.getHead().isVisited()){
-				DFSRecursive(graph, edge.getHead());
-			}
-		}
 	}
 	//Grab a node.
 	public void DFS(Node start){
@@ -61,6 +66,13 @@ public class DelivB {
 		start.setTimeDiscovered(counter);
 		//3.Incrementing the counter.
 		counter++;
+		// Sort the nodes based on their distance.
+		Collections.sort(start.getOutgoingEdges(), new Comparator<Edge>() {
+			@Override
+			public int compare(Edge edge1, Edge edge2) {
+				return edge1.getDist() - edge2.getDist();
+			}
+		});
 		//4. If node is attached to Node(start) and is unvisited then call DFS on it.
 		for(Edge edge: start.getOutgoingEdges()){
 			Node nextNode = edge.getHead();
@@ -69,10 +81,9 @@ public class DelivB {
 			}
 		}
 		//5.Record the time finished
-		start.setTimeDiscovered(counter);
-		//Increment that counter
+		start.setTimeFinished(counter);
+		//6. Increment that counter
 		counter++;
-
 	}
 
 
