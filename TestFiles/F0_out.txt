@@ -1,0 +1,374 @@
+DFS of Graph
+Node      Disc      Finish    
+AlbertLea  1          98        
+Austin     2          97        
+Owatonna   3          96        
+Faribault  4          95        
+Northfield 5          94        
+Shakopee   6          93        
+Minneapolis 7          92        
+SaintPaul  8          91        
+Stillwater 9          90        
+RedWing    10         17        
+Rochester  11         16        
+Winona     12         15        
+LaCrescent 13         14        
+SaintCloud 18         89        
+LittleFalls 19         88        
+Brainerd   20         87        
+GrandRapids 21         86        
+Hibbing    22         85        
+Virginia   23         84        
+Ely        24         83        
+InternationalFalls 25         76        
+Baudette   26         75        
+Bemidji    27         74        
+Crookston  28         73        
+EastGrandForks 29         72        
+ThiefRiverFalls 30         71        
+Noyes      31         32        
+DetroitLakes 33         70        
+Moorhead   34         69        
+FergusFalls 35         68        
+Alexandria 36         67        
+Morris     37         66        
+Montevideo 38         65        
+Willmar    39         64        
+Litchfield 40         63        
+Hutchinson 41         62        
+NewUlm     42         61        
+SaintPeter 43         60        
+Mankato    44         59        
+Waseca     45         46        
+Fairmont   47         58        
+Windom     48         57        
+Worthington 49         56        
+Luverne    50         55        
+Pipestone  51         54        
+Marshall   52         53        
+GrandPortage 77         82        
+Duluth     78         81        
+Cloquet    79         80        
+
+Edge Classification:
+Edge Type 
+AlbertLea->Austin Tree 
+AlbertLea->Fairmont Forward
+AlbertLea->Owatonna Forward
+AlbertLea->Waseca Forward
+Alexandria->FergusFalls Back 
+Alexandria->LittleFalls Back 
+Alexandria->Morris Tree 
+Alexandria->SaintCloud Back 
+Alexandria->Willmar Forward
+Austin->AlbertLea Back 
+Austin->LaCrescent Forward
+Austin->Owatonna Tree 
+Austin->Rochester Forward
+Baudette->Bemidji Tree 
+Baudette->GrandRapids Back 
+Baudette->InternationalFalls Back 
+Baudette->Noyes Forward
+Baudette->ThiefRiverFalls Forward
+Bemidji->Baudette Back 
+Bemidji->Brainerd Back 
+Bemidji->Crookston Tree 
+Bemidji->DetroitLakes Forward
+Bemidji->GrandRapids Back 
+Bemidji->InternationalFalls Back 
+Bemidji->ThiefRiverFalls Forward
+Brainerd->Bemidji Forward
+Brainerd->Cloquet Forward
+Brainerd->DetroitLakes Forward
+Brainerd->FergusFalls Forward
+Brainerd->GrandRapids Tree 
+Brainerd->LittleFalls Back 
+Cloquet->Brainerd Back 
+Cloquet->Duluth Back 
+Cloquet->GrandRapids Back 
+Cloquet->Hibbing Back 
+Cloquet->Minneapolis Back 
+Cloquet->SaintCloud Back 
+Cloquet->SaintPaul Back 
+Cloquet->Stillwater Back 
+Cloquet->Virginia Back 
+Crookston->Bemidji Back 
+Crookston->DetroitLakes Forward
+Crookston->EastGrandForks Tree 
+Crookston->Moorhead Forward
+Crookston->Noyes Forward
+Crookston->ThiefRiverFalls Forward
+DetroitLakes->Bemidji Back 
+DetroitLakes->Brainerd Back 
+DetroitLakes->Crookston Back 
+DetroitLakes->FergusFalls Forward
+DetroitLakes->Moorhead Tree 
+DetroitLakes->ThiefRiverFalls Back 
+Duluth->Cloquet Tree 
+Duluth->GrandPortage Back 
+Duluth->GrandRapids Back 
+Duluth->Hibbing Back 
+Duluth->Virginia Back 
+EastGrandForks->Crookston Back 
+EastGrandForks->Moorhead Forward
+EastGrandForks->Noyes Forward
+EastGrandForks->ThiefRiverFalls Tree 
+Ely->GrandPortage Tree 
+Ely->InternationalFalls Tree 
+Ely->Virginia Back 
+Fairmont->AlbertLea Back 
+Fairmont->Mankato Back 
+Fairmont->Windom Tree 
+Fairmont->Worthington Forward
+Faribault->Mankato Forward
+Faribault->Northfield Tree 
+Faribault->Owatonna Back 
+Faribault->Rochester Forward
+Faribault->SaintPaul Forward
+Faribault->SaintPeter Forward
+Faribault->Shakopee Forward
+Faribault->Waseca Forward
+FergusFalls->Alexandria Tree 
+FergusFalls->Brainerd Back 
+FergusFalls->DetroitLakes Back 
+FergusFalls->Moorhead Back 
+FergusFalls->Morris Forward
+GrandPortage->Duluth Tree 
+GrandPortage->Ely Back 
+GrandPortage->Virginia Back 
+GrandRapids->Baudette Forward
+GrandRapids->Bemidji Forward
+GrandRapids->Brainerd Back 
+GrandRapids->Cloquet Forward
+GrandRapids->Duluth Forward
+GrandRapids->Hibbing Tree 
+GrandRapids->InternationalFalls Forward
+Hibbing->Cloquet Forward
+Hibbing->Duluth Forward
+Hibbing->GrandRapids Back 
+Hibbing->InternationalFalls Forward
+Hibbing->Virginia Tree 
+Hutchinson->Litchfield Back 
+Hutchinson->Minneapolis Back 
+Hutchinson->Montevideo Back 
+Hutchinson->NewUlm Tree 
+Hutchinson->SaintCloud Back 
+Hutchinson->SaintPeter Forward
+Hutchinson->Shakopee Back 
+InternationalFalls->Baudette Tree 
+InternationalFalls->Bemidji Forward
+InternationalFalls->Ely Back 
+InternationalFalls->GrandRapids Back 
+InternationalFalls->Hibbing Back 
+InternationalFalls->Virginia Back 
+LaCrescent->Austin Back 
+LaCrescent->Rochester Back 
+LaCrescent->Winona Back 
+Litchfield->Hutchinson Tree 
+Litchfield->Minneapolis Back 
+Litchfield->SaintCloud Back 
+Litchfield->Willmar Back 
+LittleFalls->Alexandria Forward
+LittleFalls->Brainerd Tree 
+LittleFalls->Morris Forward
+LittleFalls->SaintCloud Back 
+Luverne->Pipestone Tree 
+Luverne->Worthington Back 
+Mankato->Fairmont Tree 
+Mankato->Faribault Back 
+Mankato->NewUlm Back 
+Mankato->SaintPeter Back 
+Mankato->Waseca Tree 
+Mankato->Windom Forward
+Marshall->Montevideo Back 
+Marshall->NewUlm Back 
+Marshall->Pipestone Back 
+Marshall->Willmar Back 
+Marshall->Windom Back 
+Minneapolis->Cloquet Forward
+Minneapolis->Hutchinson Forward
+Minneapolis->Litchfield Forward
+Minneapolis->Northfield Back 
+Minneapolis->SaintCloud Forward
+Minneapolis->SaintPaul Tree 
+Minneapolis->Shakopee Back 
+Minneapolis->Stillwater Forward
+Montevideo->Hutchinson Forward
+Montevideo->Marshall Forward
+Montevideo->Morris Back 
+Montevideo->NewUlm Forward
+Montevideo->Willmar Tree 
+Moorhead->Crookston Back 
+Moorhead->DetroitLakes Back 
+Moorhead->EastGrandForks Back 
+Moorhead->FergusFalls Tree 
+Morris->Alexandria Back 
+Morris->FergusFalls Back 
+Morris->LittleFalls Back 
+Morris->Montevideo Tree 
+Morris->SaintCloud Back 
+Morris->Willmar Forward
+NewUlm->Hutchinson Back 
+NewUlm->Mankato Forward
+NewUlm->Marshall Forward
+NewUlm->Montevideo Back 
+NewUlm->Pipestone Forward
+NewUlm->SaintPeter Tree 
+NewUlm->Willmar Back 
+NewUlm->Windom Forward
+Northfield->Faribault Back 
+Northfield->Minneapolis Forward
+Northfield->RedWing Forward
+Northfield->Rochester Forward
+Northfield->SaintPaul Forward
+Northfield->Shakopee Tree 
+Noyes->Baudette Back 
+Noyes->Crookston Back 
+Noyes->EastGrandForks Back 
+Noyes->ThiefRiverFalls Back 
+Owatonna->AlbertLea Back 
+Owatonna->Austin Back 
+Owatonna->Faribault Tree 
+Owatonna->Rochester Forward
+Owatonna->Waseca Forward
+Pipestone->Luverne Back 
+Pipestone->Marshall Tree 
+Pipestone->NewUlm Back 
+Pipestone->Windom Back 
+RedWing->Northfield Back 
+RedWing->Rochester Tree 
+RedWing->SaintPaul Back 
+RedWing->Stillwater Back 
+RedWing->Winona Forward
+Rochester->Austin Back 
+Rochester->Faribault Back 
+Rochester->LaCrescent Forward
+Rochester->Northfield Back 
+Rochester->Owatonna Back 
+Rochester->RedWing Back 
+Rochester->Winona Tree 
+SaintCloud->Alexandria Forward
+SaintCloud->Cloquet Forward
+SaintCloud->Hutchinson Forward
+SaintCloud->Litchfield Forward
+SaintCloud->LittleFalls Tree 
+SaintCloud->Minneapolis Back 
+SaintCloud->Morris Forward
+SaintCloud->Shakopee Back 
+SaintCloud->Stillwater Back 
+SaintCloud->Willmar Forward
+SaintPaul->Cloquet Forward
+SaintPaul->Faribault Back 
+SaintPaul->Minneapolis Back 
+SaintPaul->Northfield Back 
+SaintPaul->RedWing Forward
+SaintPaul->Shakopee Back 
+SaintPaul->Stillwater Tree 
+SaintPeter->Faribault Back 
+SaintPeter->Hutchinson Back 
+SaintPeter->Mankato Tree 
+SaintPeter->NewUlm Back 
+SaintPeter->Shakopee Back 
+Shakopee->Faribault Back 
+Shakopee->Hutchinson Forward
+Shakopee->Minneapolis Tree 
+Shakopee->Northfield Back 
+Shakopee->SaintCloud Forward
+Shakopee->SaintPaul Forward
+Shakopee->SaintPeter Forward
+Stillwater->Cloquet Forward
+Stillwater->Minneapolis Back 
+Stillwater->RedWing Tree 
+Stillwater->SaintCloud Tree 
+Stillwater->SaintPaul Back 
+ThiefRiverFalls->Baudette Back 
+ThiefRiverFalls->Bemidji Back 
+ThiefRiverFalls->Crookston Back 
+ThiefRiverFalls->DetroitLakes Tree 
+ThiefRiverFalls->EastGrandForks Back 
+ThiefRiverFalls->Noyes Tree 
+Virginia->Cloquet Forward
+Virginia->Duluth Forward
+Virginia->Ely Tree 
+Virginia->GrandPortage Forward
+Virginia->Hibbing Back 
+Virginia->InternationalFalls Forward
+Waseca->AlbertLea Back 
+Waseca->Faribault Back 
+Waseca->Mankato Back 
+Waseca->Owatonna Back 
+Willmar->Alexandria Back 
+Willmar->Litchfield Tree 
+Willmar->Marshall Forward
+Willmar->Montevideo Back 
+Willmar->Morris Back 
+Willmar->NewUlm Forward
+Willmar->SaintCloud Back 
+Windom->Fairmont Back 
+Windom->Mankato Back 
+Windom->Marshall Forward
+Windom->NewUlm Back 
+Windom->Pipestone Forward
+Windom->Worthington Tree 
+Winona->LaCrescent Tree 
+Winona->RedWing Back 
+Winona->Rochester Back 
+Worthington->Fairmont Back 
+Worthington->Luverne Tree 
+Worthington->Windom Back 
+
+DFS of Complementary Graph:
+Node      Disc      Finish    
+AlbertLea  1          98        
+Austin     2          97        
+Owatonna   3          96        
+Faribault  4          95        
+Northfield 5          94        
+Shakopee   6          93        
+Minneapolis 7          92        
+SaintPaul  8          91        
+Stillwater 9          90        
+RedWing    10         17        
+Rochester  11         16        
+Winona     12         15        
+LaCrescent 13         14        
+SaintCloud 18         89        
+LittleFalls 19         88        
+Brainerd   20         87        
+GrandRapids 21         86        
+Hibbing    22         85        
+Virginia   23         84        
+Ely        24         83        
+InternationalFalls 25         76        
+Baudette   26         75        
+Bemidji    27         74        
+Crookston  28         73        
+EastGrandForks 29         72        
+ThiefRiverFalls 30         71        
+Noyes      31         32        
+DetroitLakes 33         70        
+Moorhead   34         69        
+FergusFalls 35         68        
+Alexandria 36         67        
+Morris     37         66        
+Montevideo 38         65        
+Willmar    39         64        
+Litchfield 40         63        
+Hutchinson 41         62        
+NewUlm     42         61        
+SaintPeter 43         60        
+Mankato    44         59        
+Waseca     45         46        
+Fairmont   47         58        
+Windom     48         57        
+Worthington 49         56        
+Luverne    50         55        
+Pipestone  51         54        
+Marshall   52         53        
+GrandPortage 77         82        
+Duluth     78         81        
+Cloquet    79         80        
+
+Strongly Connected Components: 1
+AlbertLea Alexandria Austin Baudette Bemidji Brainerd Cloquet Crookston DetroitLakes Duluth EastGrandForks Ely Fairmont Faribault FergusFalls GrandPortage GrandRapids Hibbing Hutchinson InternationalFalls LaCrescent Litchfield LittleFalls Luverne Mankato Marshall Minneapolis Montevideo Moorhead Morris NewUlm Northfield Noyes Owatonna Pipestone RedWing Rochester SaintCloud SaintPaul SaintPeter Shakopee Stillwater ThiefRiverFalls Virginia Waseca Willmar Windom Winona Worthington 
+

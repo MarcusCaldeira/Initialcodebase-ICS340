@@ -43,10 +43,17 @@ public class Graph {
     public Node getStartingNode(){
         return nodeList.get(getStartNodeIndex());
     }
-    public String printNodeList(){
+    public String printNodeList(String message){
+        //Sort the node list by discovery time.
+        Collections.sort(this.getNodeList(), new Comparator<Node>() {
+            @Override
+            public int compare(Node node1, Node node2) {
+                return node1.getTimeDiscovered() - node2.getTimeDiscovered();
+            }
+        });
         StringBuilder outputMessage = new StringBuilder();
-        outputMessage.append("DFS of Graph\n");
-        String header = String.format("%-10s%-10s%-10s\n","Node","Dist","Finish");
+        outputMessage.append(message + "\n");
+        String header = String.format("%-10s%-10s%-10s\n","Node","Disc","Finish");
         outputMessage.append(header);
         for (int i = 0; i < nodeList.size(); i++) {
             Node currentNode = nodeList.get(i);
@@ -76,6 +83,27 @@ public class Graph {
             Node oldTail = edge.getTail();
             edge.setHead(oldTail);
             edge.setTail(oldHead);
+        }
+        ArrayList<Node> nodes = gr.getNodeList();
+        for(Node node: nodes){
+            ArrayList<Edge> oldOutEdges = (ArrayList<Edge>)node.getOutgoingEdges().clone();
+            ArrayList<Edge> oldInEdges = (ArrayList<Edge>)node.getIncomingEdges().clone();
+            node.outgoingEdges.clear();
+            node.incomingEdges.clear();
+            for (Edge oldOut: oldOutEdges){
+                node.incomingEdges.add(oldOut);
+            }
+            for(Edge oldIn: oldInEdges){
+                node.outgoingEdges.add(oldIn);
+            }
+        }
+    }
+    public static void ClearGraph(Graph gr){
+        ArrayList<Node> nodes = gr.getNodeList();
+        for(Node node: nodes){
+            node.setVisited(false);
+            node.setTimeDiscovered(0);
+            node.setTimeFinished(0);
         }
     }
 

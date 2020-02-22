@@ -1,0 +1,180 @@
+DFS of Graph
+Node      Disc      Finish    
+LosAngeles 1          24        
+SanFrancisco 2          23        
+Seattle    3          22        
+Denver     4          21        
+Dallas     5          20        
+Atlanta    6          19        
+Washington 7          18        
+NewYork    8          17        
+Boston     9          16        
+Chicago    10         15        
+Minneapolis 11         14        
+Miami      12         13        
+
+Edge Classification:
+Edge Type 
+Atlanta->Atlanta null 
+Atlanta->Boston Forward
+Atlanta->Chicago Forward
+Atlanta->Dallas Back 
+Atlanta->Denver Back 
+Atlanta->LosAngeles Back 
+Atlanta->Miami Forward
+Atlanta->Minneapolis Forward
+Atlanta->NewYork Forward
+Atlanta->SanFrancisco Back 
+Atlanta->Seattle Back 
+Atlanta->Washington Tree 
+Boston->Atlanta Back 
+Boston->Boston null 
+Boston->Chicago Tree 
+Boston->Dallas Back 
+Boston->Denver Back 
+Boston->LosAngeles Back 
+Boston->Miami Forward
+Boston->Minneapolis Forward
+Boston->NewYork Back 
+Boston->SanFrancisco Back 
+Boston->Seattle Back 
+Boston->Washington Back 
+Chicago->Atlanta Back 
+Chicago->Boston Back 
+Chicago->Chicago null 
+Chicago->Dallas Back 
+Chicago->Denver Back 
+Chicago->LosAngeles Back 
+Chicago->Miami Forward
+Chicago->Minneapolis Tree 
+Chicago->NewYork Back 
+Chicago->SanFrancisco Back 
+Chicago->Seattle Back 
+Chicago->Washington Back 
+Dallas->Atlanta Tree 
+Dallas->Boston Forward
+Dallas->Chicago Forward
+Dallas->Dallas null 
+Dallas->Denver Back 
+Dallas->LosAngeles Back 
+Dallas->Miami Forward
+Dallas->Minneapolis Forward
+Dallas->NewYork Forward
+Dallas->SanFrancisco Back 
+Dallas->Seattle Back 
+Dallas->Washington Forward
+Denver->Atlanta Forward
+Denver->Boston Forward
+Denver->Chicago Forward
+Denver->Dallas Tree 
+Denver->Denver null 
+Denver->LosAngeles Back 
+Denver->Miami Forward
+Denver->Minneapolis Forward
+Denver->NewYork Forward
+Denver->SanFrancisco Back 
+Denver->Seattle Back 
+Denver->Washington Forward
+LosAngeles->Atlanta Forward
+LosAngeles->Boston Forward
+LosAngeles->Chicago Forward
+LosAngeles->Dallas Forward
+LosAngeles->Denver Forward
+LosAngeles->LosAngeles null 
+LosAngeles->Miami Forward
+LosAngeles->Minneapolis Forward
+LosAngeles->NewYork Forward
+LosAngeles->SanFrancisco Tree 
+LosAngeles->Seattle Forward
+LosAngeles->Washington Forward
+Miami->Atlanta Back 
+Miami->Boston Back 
+Miami->Chicago Back 
+Miami->Dallas Back 
+Miami->Denver Back 
+Miami->LosAngeles Back 
+Miami->Miami null 
+Miami->Minneapolis Back 
+Miami->NewYork Back 
+Miami->SanFrancisco Back 
+Miami->Seattle Back 
+Miami->Washington Back 
+Minneapolis->Atlanta Back 
+Minneapolis->Boston Back 
+Minneapolis->Chicago Back 
+Minneapolis->Dallas Back 
+Minneapolis->Denver Back 
+Minneapolis->LosAngeles Back 
+Minneapolis->Miami Tree 
+Minneapolis->Minneapolis null 
+Minneapolis->NewYork Back 
+Minneapolis->SanFrancisco Back 
+Minneapolis->Seattle Back 
+Minneapolis->Washington Back 
+NewYork->Atlanta Back 
+NewYork->Boston Tree 
+NewYork->Chicago Forward
+NewYork->Dallas Back 
+NewYork->Denver Back 
+NewYork->LosAngeles Back 
+NewYork->Miami Forward
+NewYork->Minneapolis Forward
+NewYork->NewYork null 
+NewYork->SanFrancisco Back 
+NewYork->Seattle Back 
+NewYork->Washington Back 
+SanFrancisco->Atlanta Forward
+SanFrancisco->Boston Forward
+SanFrancisco->Chicago Forward
+SanFrancisco->Dallas Forward
+SanFrancisco->Denver Forward
+SanFrancisco->LosAngeles Back 
+SanFrancisco->Miami Forward
+SanFrancisco->Minneapolis Forward
+SanFrancisco->NewYork Forward
+SanFrancisco->SanFrancisco null 
+SanFrancisco->Seattle Tree 
+SanFrancisco->Washington Forward
+Seattle->Atlanta Forward
+Seattle->Boston Forward
+Seattle->Chicago Forward
+Seattle->Dallas Forward
+Seattle->Denver Tree 
+Seattle->LosAngeles Back 
+Seattle->Miami Forward
+Seattle->Minneapolis Forward
+Seattle->NewYork Forward
+Seattle->SanFrancisco Back 
+Seattle->Seattle null 
+Seattle->Washington Forward
+Washington->Atlanta Back 
+Washington->Boston Forward
+Washington->Chicago Forward
+Washington->Dallas Back 
+Washington->Denver Back 
+Washington->LosAngeles Back 
+Washington->Miami Forward
+Washington->Minneapolis Forward
+Washington->NewYork Tree 
+Washington->SanFrancisco Back 
+Washington->Seattle Back 
+Washington->Washington null 
+
+DFS of Complementary Graph:
+Node      Disc      Finish    
+LosAngeles 1          24        
+SanFrancisco 2          23        
+Seattle    3          22        
+Denver     4          21        
+Dallas     5          20        
+Atlanta    6          19        
+Washington 7          18        
+NewYork    8          17        
+Boston     9          16        
+Chicago    10         15        
+Minneapolis 11         14        
+Miami      12         13        
+
+Strongly Connected Components: 1
+AABCDDFLMMNSSWYaaaaaaaaaaaccceeeeeeeeggghhiiiiiiikllllllmnnnnnnnnnnooooooooprrrsssssssttttttvw
+
