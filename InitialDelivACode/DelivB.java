@@ -14,9 +14,10 @@ public class DelivB {
 	Graph g;
 	private int counter = 1;
 	
-	public DelivB( File in, Graph gr ) {
+	public DelivB( File in, Graph gr) {
 		inputFile = in;
 		g = gr;
+
 		
 		// Get output file name.
 		String inputFileName = inputFile.toString();
@@ -72,14 +73,16 @@ public class DelivB {
 			}
 		});
 		delivBOutput.append(gr.printEdgeClassification()+ "\n");
+		//Transpose Graph
+		Graph.transpose(gr);
 
 		// Quantify strongly connected components and display the components
-
+		delivBOutput.append(gr.printNodeList()+ "\n");
+		// Classify the non tree edges
 		System.out.println(delivBOutput);
 		output.println(delivBOutput);
 		//Ensures the file gets wrote.
 		output.flush();
-
 	}
 	//Grab a node.
 	public void DFS(Node start){
@@ -110,6 +113,7 @@ public class DelivB {
 		//6. Increment that counter
 		counter++;
 	}
+
 
 
 

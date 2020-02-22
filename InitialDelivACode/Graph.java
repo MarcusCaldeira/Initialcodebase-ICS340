@@ -68,5 +68,16 @@ public class Graph {
         }
         return edgeOutputMessage.toString();
     }
+    //Will transpose the graph object.
+    public static void transpose(Graph gr){
+        ArrayList<Edge> edges = gr.getEdgeList();
+        for (Edge edge: edges) {
+            Node oldHead = edge.getHead();
+            Node oldTail = edge.getTail();
+            edge.setHead(oldTail);
+            edge.setTail(oldHead);
+        }
+    }
+
 
 }
