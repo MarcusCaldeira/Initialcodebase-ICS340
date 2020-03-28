@@ -30,8 +30,9 @@ public class DelivC {
 			System.err.format("Exception: %s%n", x);
 			System.exit(0);
 		}
-		System.out.println( "DelivC:  To be implemented");
-		output.println( "DelivC:  To be implemented");
+		StringBuilder messageOutput = new StringBuilder();
+		System.out.println(messageOutput);
+		output.println(messageOutput);
 		output.flush();
 	}
 }

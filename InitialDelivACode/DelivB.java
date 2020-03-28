@@ -106,7 +106,6 @@ public class DelivB {
 
         }
 
-
         // Classify the non tree edges
         System.out.println(delivBOutput);
         output.println(delivBOutput);
