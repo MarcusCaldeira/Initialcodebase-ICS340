@@ -183,6 +183,15 @@ public class Prog340 extends JPanel implements ActionListener {
 					n.addOutgoingEdge( e );
 					head.addIncomingEdge( e );
 				}
+				//TODO: will need to write this in to run if deliv C
+				else if(true){
+					Node head = nodeList.get(i-2);
+					Edge e = new Edge( n, head, "100000" );
+					e.setDist("100000");
+					g.addEdge( e );
+					n.addOutgoingEdge( e );
+					head.addIncomingEdge( e );
+				}
 			}
 			nodeIndex++;
 

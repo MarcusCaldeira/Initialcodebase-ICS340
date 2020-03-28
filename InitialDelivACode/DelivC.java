@@ -31,6 +31,24 @@ public class DelivC {
 			System.exit(0);
 		}
 		StringBuilder messageOutput = new StringBuilder();
+		//read graph.
+		//add fake edges.
+		//Only do this when deliv C is running.
+
+		//Print first tour.
+
+
+		/*
+		* These will run as loop.
+		*/
+		//Generate random tours.
+		//print next better tour.
+		//stop generating tours.
+
+
+
+
+
 		System.out.println(messageOutput);
 		output.println(messageOutput);
 		output.flush();
