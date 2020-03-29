@@ -106,6 +106,20 @@ public class Graph {
             node.setTimeFinished(0);
         }
     }
+    public Edge getEdge(Node head, Node tail){
+        Edge foundEdge = null;
+
+        for (int i = 0; i < edgeList.size() ; i++) {
+            Edge currentEdge = edgeList.get(i);
+            if(currentEdge.getHead().getName().equals(head.getName())){
+                if (currentEdge.getTail().getName().equals(tail.getName())){
+                    foundEdge = currentEdge;
+                    break;
+                }
+            }
+        }
+        return foundEdge;
+    }
 
 
 }

@@ -1,5 +1,8 @@
+import org.w3c.dom.NodeList;
+
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 // Class DelivC does the work for deliverable DelivC of the Prog340
 
@@ -36,7 +39,24 @@ public class DelivC {
 		//Only do this when deliv C is running.
 
 		//Print first tour.
-
+		StringBuilder currentTourAbrev = new StringBuilder();
+		ArrayList <Node>  firstTour = g.getNodeList();
+		int totalDistance = 0;
+		for (int i = 0; i < firstTour.size() - 1; i++) {
+			Node tail = firstTour.get(i);
+			Node head = firstTour.get(i + 1);
+			Edge currentEdge = g.getEdge(head, tail);
+			totalDistance += currentEdge.getDist();
+			currentTourAbrev.append(tail.getAbbrev() + " ");
+		}
+		Node lastTail = firstTour.get(firstTour.size() - 1);
+		Node lastHead = firstTour.get(0);
+		currentTourAbrev.append(lastTail.getAbbrev() + " ");
+		currentTourAbrev.append(lastHead.getAbbrev());
+		Edge edgeHome = g.getEdge(lastHead, lastTail);
+		totalDistance += edgeHome.getDist();
+		String currentTour = String.format("Dist = %d: %s", totalDistance, currentTourAbrev);
+		messageOutput.append(currentTour);
 
 		/*
 		* These will run as loop.
