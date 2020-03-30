@@ -1,3 +1,3 @@
 Dist = 33: Ap Ba Ca Du El Ap
-Dist = 33: Ap Du Ca El Ba Ap
+Dist = 26: Ap Du El Ba Ca Ap
 

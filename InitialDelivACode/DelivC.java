@@ -49,12 +49,27 @@ public class DelivC {
 		* These will run as loop.
 		*/
 		//Generate random tours.
-		ArrayList <Node> secondTour = switchIndex(firstTour);
-		Tour firstRandomTour = getTour(secondTour);
-		messageOutput.append(firstRandomTour);
-
-
+		int shortestDistance = currentTour.getDistance();
+		int tryCounter = 100;
+		ArrayList<Node> temptour = (ArrayList<Node>) firstTour;
 		//print next better tour.
+		while (tryCounter > 0){
+			ArrayList <Node> secondTour = switchIndex(temptour);
+			temptour = secondTour;
+			Tour firstRandomTour = getTour(secondTour);
+			if(firstRandomTour.getDistance() < shortestDistance){
+				messageOutput.append(firstRandomTour);
+				shortestDistance = firstRandomTour.getDistance();
+			}
+			else{
+				tryCounter--;
+			}
+		}
+		//Start local search from a different place.
+
+
+
+
 		//stop generating tours.
 
 
@@ -88,12 +103,19 @@ public class DelivC {
 		return new Tour(totalDistance, printTour);
 	}
 	public ArrayList <Node> switchIndex(ArrayList <Node> nodeList){
+		// dogs.stream().map(Dog::new).collect(toCollection(ArrayList::new))
+		// deep copy of nodeList
+		ArrayList<Node> deepCopy  = new ArrayList<>();;
+		for (Node node: nodeList
+			 ) {
+			deepCopy.add(node);
+		}
 		ArrayList <Node> newNodeList = new ArrayList<>();
 		//Saves the starting city.
-		newNodeList.add(nodeList.remove(0));
+		newNodeList.add(deepCopy.remove(0));
 		//While nodeList is not empty This will remove a random node from the remaining nodes in nodeList.
-		while (!nodeList.isEmpty()){
-			newNodeList.add(nodeList.remove(new Random().nextInt(nodeList.size())));
+		while (!deepCopy.isEmpty()){
+			newNodeList.add(deepCopy.remove(new Random().nextInt(deepCopy.size())));
 		}
 		return newNodeList;
 	}
