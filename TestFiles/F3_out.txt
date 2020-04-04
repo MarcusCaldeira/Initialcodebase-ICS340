@@ -1,5 +1,7 @@
+
+********************************
+Only the improved tours:
 Dist = 9484: ALe Alx Aus Bau Bem Bra Clq Crk DLk Dul EGF Ely Fmt Frb FFl GPo GRa Hib Hut IFl LCr Lit LFa Luv Mkt Mar Mpl Mvo Mrh Mor NUl Nfd Noy Owa Pip RWi Rch SCl SPl SPt Skp Stl TRF Vir Was Wlm Wnd Win Wrt ALe
-Dist = 9099: ALe NUl Nfd Stl DLk Noy IFl Ely EGF Frb Was Wnd Wrt Vir Dul GRa Fmt Mpl RWi Mkt Clq Luv Alx Aus Rch Lit Bem Mor Bra TRF Skp Mvo Mrh Mar LFa Crk FFl GPo Win SCl Owa LCr SPt Bau Hut Pip Hib Wlm SPl ALe
-Dist = 9074: ALe Rch Bem Hib Wnd Fmt Wlm Owa LCr Mar Crk Pip Mpl NUl GPo Alx Mor Wrt Hut Win Skp SPl Aus IFl Noy Mvo LFa Bra Lit RWi Ely Was Frb Clq Dul DLk Stl Mkt Luv FFl Bau EGF Mrh Vir TRF SPt SCl Nfd GRa ALe
-Dist = 8666: ALe Noy Mvo NUl Mar RWi TRF Mrh Wrt Crk SCl Mor Alx Bau Hut FFl IFl Hib LFa Wlm Rch DLk Aus Bra EGF Mkt SPl Win Owa SPt Pip LCr Skp Nfd Clq Vir GPo GRa Lit Bem Ely Dul Mpl Stl Wnd Luv Frb Fmt Was ALe
+Dist = 8508: ALe Clq Vir Hib SPt Frb Hut Noy Crk FFl DLk Wlm LCr SPl RWi Wnd NUl Alx Win IFl LFa Ely Was Stl GPo Dul Mvo GRa Mpl TRF EGF Bra Pip Luv SCl Nfd Mkt Bau Mor Mar Skp Aus Mrh Bem Rch Owa Lit Fmt Wrt ALe
+Dist = 8110: ALe LCr Aus SPt Mkt Hut Mrh Stl Skp Wrt Pip Frb FFl Bau SCl NUl Alx Mor LFa Dul Mar IFl Lit Fmt Wnd Noy TRF DLk Mvo EGF Bra Owa Vir Bem GRa Hib SPl RWi Win GPo Ely Mpl Clq Wlm Nfd Crk Luv Was Rch ALe
 

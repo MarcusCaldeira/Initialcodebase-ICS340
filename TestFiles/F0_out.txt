@@ -1,6 +1,10 @@
+
+********************************
+Only the improved tours:
 Dist = 4200514: ALe Alx Aus Bau Bem Bra Clq Crk DLk Dul EGF Ely Fmt Frb FFl GPo GRp Hib Hut IFl LCr Lit LFl Luv Mkt Mar Mpl Mvo Mrh Mor NUl Nfd Noy Owa Pip RWg Rch StC SPl SPt Skp Stl TRF Vir Was Wlm Wnd Win Wrt ALe
-Dist = 4100427: ALe Vir IFl Luv Noy SPl LCr LFl Mar Mor Lit StC Bra Win Mrh Stl Mpl Crk Frb Hut Mkt Fmt EGF Alx GPo Mvo Ely Aus Was Clq DLk GRp Hib FFl Nfd Wrt Wnd Pip Owa Bau SPt RWg Dul TRF Rch Skp NUl Wlm Bem ALe
-Dist = 3800630: ALe LCr Hut Mkt Was GPo Stl TRF Vir Clq RWg Rch Mrh Frb Mvo Pip NUl Mar Owa Aus Fmt Mor Mpl Alx Bau Luv EGF Crk Wlm FFl Hib SPt LFl Wrt Wnd Lit Win DLk Bem Noy StC IFl Dul Bra GRp SPl Nfd Ely Skp ALe
-Dist = 3800459: ALe Aus Stl Crk Pip EGF Dul Clq RWg Vir Mpl Mar NUl Mvo Owa Frb Nfd Hut Skp SPl GPo Bau Rch Lit Win Alx DLk Hib Mrh Wnd Bra LCr Was Mkt Bem Wrt Wlm IFl Luv Mor Noy SPt TRF FFl GRp Ely LFl StC Fmt ALe
-Dist = 3700747: ALe IFl Bem Stl Aus Mkt Was Clq StC Mor Bau LCr Owa Mrh Luv Mvo Wrt Dul Frb SPt Fmt GPo Bra Rch Wlm Lit Mpl Hut Ely DLk Pip Vir LFl TRF Mar RWg Crk Skp Win Wnd NUl EGF Alx FFl SPl Nfd Noy Hib GRp ALe
+Dist = 4100555: ALe Clq Noy Mpl Was Wnd Pip Rch LCr Frb StC TRF GRp LFl Lit Owa Wlm GPo Ely Nfd Mrh RWg Stl Aus EGF Vir SPl IFl Mkt Hib Mvo Fmt Hut Skp DLk Dul Bau Wrt Win Bra SPt NUl Mor Crk Bem Alx FFl Mar Luv ALe
+Dist = 3900720: ALe Nfd Mar EGF FFl LFl Aus Noy Rch Owa Frb LCr SPl IFl Mvo Vir Stl Wlm Mor Was DLk Crk Bau StC Bra Clq Luv Skp SPt Pip Wrt Fmt GRp GPo Ely Hut Mrh RWg Hib TRF Bem Wnd Alx NUl Win Mkt Dul Lit Mpl ALe
+Dist = 3900571: SPt Bra Lit Ely Aus Pip Wrt RWg Win Clq Vir Luv EGF GPo StC SPl Stl Bem Bau Hib Mpl Rch Wlm TRF DLk Owa LCr Mvo Mor Noy Dul FFl Mrh IFl Frb Mkt Crk Mar GRp Hut Was ALe LFl Nfd NUl Fmt Alx Wnd Skp SPt
+Dist = 3900562: SPt Hut SPl GPo Pip Mar Fmt EGF Mpl Skp Mrh ALe LFl Luv FFl Ely TRF Stl IFl Bem Bau Crk Dul Clq Aus RWg GRp NUl StC Mvo Lit Alx Bra LCr Rch Nfd Vir Hib Was Wrt Frb Wnd Owa Noy Mkt Win DLk Mor Wlm SPt
+Dist = 3600806: Vir Was Luv Pip Win Mrh Wlm Nfd SPl RWg Wrt Ely GPo SPt Mor ALe Owa Frb LCr Crk Alx Noy Clq Dul Bem Bau Mpl Rch Stl Bra Lit Fmt TRF Hut Skp Mvo NUl Mar StC Wnd GRp Aus EGF Mkt DLk LFl FFl IFl Hib Vir
 

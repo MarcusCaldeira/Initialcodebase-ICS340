@@ -1,68 +1,8 @@
-DFS of Graph
-Node      Disc      Finish    
-Winnipeg   1          14        
-StPaul     2          13        
-Chicago    3          12        
-StLouis    4          11        
-Nashville  5          10        
-Dallas     6          9         
-Denver     7          8         
 
-Edge Classification:
-Edge Type 
-Chicago->Dallas Forward
-Chicago->Denver Forward
-Chicago->Nashville Forward
-Chicago->StLouis Tree 
-Chicago->StPaul Back 
-Chicago->Winnipeg Back 
-Dallas->Chicago Back 
-Dallas->Denver Tree 
-Dallas->Nashville Back 
-Dallas->StLouis Back 
-Dallas->StPaul Back 
-Dallas->Winnipeg Back 
-Denver->Chicago Back 
-Denver->Dallas Back 
-Denver->Nashville Back 
-Denver->StLouis Back 
-Denver->StPaul Back 
-Denver->Winnipeg Back 
-Nashville->Chicago Back 
-Nashville->Dallas Tree 
-Nashville->Denver Forward
-Nashville->StLouis Back 
-Nashville->StPaul Back 
-Nashville->Winnipeg Back 
-StLouis->Chicago Back 
-StLouis->Dallas Forward
-StLouis->Denver Forward
-StLouis->Nashville Tree 
-StLouis->StPaul Back 
-StLouis->Winnipeg Back 
-StPaul->Chicago Tree 
-StPaul->Dallas Forward
-StPaul->Denver Forward
-StPaul->Nashville Forward
-StPaul->StLouis Forward
-StPaul->Winnipeg Back 
-Winnipeg->Chicago Forward
-Winnipeg->Dallas Forward
-Winnipeg->Denver Forward
-Winnipeg->Nashville Forward
-Winnipeg->StLouis Forward
-Winnipeg->StPaul Tree 
-
-DFS of Complementary Graph:
-Node      Disc      Finish    
-Winnipeg   1          14        
-StPaul     2          13        
-Chicago    3          12        
-StLouis    4          11        
-Nashville  5          10        
-Dallas     6          9         
-Denver     7          8         
-
-Strongly Connected Components: 1
-Chicago Dallas Denver Nashville StLouis StPaul Winnipeg 
+********************************
+Only the improved tours:
+Dist = 5106: C D d N L P W C
+Dist = 4916: C N L D P W d C
+Dist = 4307: C W P d D N L C
+Dist = 4015: W d D N L C P W
 
