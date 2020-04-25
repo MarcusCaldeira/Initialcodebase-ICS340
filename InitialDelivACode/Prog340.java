@@ -1,3 +1,4 @@
+import javax.management.RuntimeErrorException;
 import javax.swing.*;
 import java.io.*;
 import java.util.*;
@@ -32,7 +33,7 @@ public class Prog340 extends JPanel implements ActionListener {
 **/
 
   public static void main(String[] args) throws FileNotFoundException {
-	  javax.swing.SwingUtilities.invokeLater(new Runnable() {
+	  SwingUtilities.invokeLater(new Runnable() {
 		  public void run() {
 			  createAndShowGUI();
 		  }
@@ -139,7 +140,7 @@ public class Prog340 extends JPanel implements ActionListener {
   
 /** Read the file containing the Strings, line by line, then process each line as it is read.
 **/
-  public void readGraphInfo( Graph g ) {
+  public void readGraphInfo( Graph g ) throws RuntimeErrorException {
 
 	try {
 		
@@ -169,6 +170,8 @@ public class Prog340 extends JPanel implements ActionListener {
 		while ( sc.hasNextLine() ) {
 			String nextLine = sc.nextLine();
 			splitString = nextLine.split(" +");
+			if (splitString.length > nodeList.size() + 2)
+				throw new RuntimeException("File row has too many indexes. Likely caused by spaces in the city name: " + splitString[0]);
 
 			Node n = nodeList.get( nodeIndex );
 			n.setName( splitString[0] );
@@ -184,15 +187,6 @@ public class Prog340 extends JPanel implements ActionListener {
 					head.addIncomingEdge( e );
 				}
 
-				//TODO: will need to write this in to run if deliv C
-				else if(true){
-					Node head = nodeList.get(i-2);
-					Edge e = new Edge( n, head, "100000" );
-					e.setDist("100000");
-					g.addEdge( e );
-					n.addOutgoingEdge( e );
-					head.addIncomingEdge( e );
-				}
 			}
 			nodeIndex++;
 

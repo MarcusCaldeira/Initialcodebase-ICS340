@@ -1,7 +1,0 @@
-
-********************************
-Only the improved tours:
-Dist = 9484: ALe Alx Aus Bau Bem Bra Clq Crk DLk Dul EGF Ely Fmt Frb FFl GPo GRa Hib Hut IFl LCr Lit LFa Luv Mkt Mar Mpl Mvo Mrh Mor NUl Nfd Noy Owa Pip RWi Rch SCl SPl SPt Skp Stl TRF Vir Was Wlm Wnd Win Wrt ALe
-Dist = 8508: ALe Clq Vir Hib SPt Frb Hut Noy Crk FFl DLk Wlm LCr SPl RWi Wnd NUl Alx Win IFl LFa Ely Was Stl GPo Dul Mvo GRa Mpl TRF EGF Bra Pip Luv SCl Nfd Mkt Bau Mor Mar Skp Aus Mrh Bem Rch Owa Lit Fmt Wrt ALe
-Dist = 8110: ALe LCr Aus SPt Mkt Hut Mrh Stl Skp Wrt Pip Frb FFl Bau SCl NUl Alx Mor LFa Dul Mar IFl Lit Fmt Wnd Noy TRF DLk Mvo EGF Bra Owa Vir Bem GRa Hib SPl RWi Win GPo Ely Mpl Clq Wlm Nfd Crk Luv Was Rch ALe
-

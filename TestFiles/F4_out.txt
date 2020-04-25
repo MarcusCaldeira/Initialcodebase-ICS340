@@ -1,8 +1,0 @@
-
-********************************
-Only the improved tours:
-Dist = 5106: C D d N L P W C
-Dist = 4916: C N L D P W d C
-Dist = 4307: C W P d D N L C
-Dist = 4015: W d D N L C P W
-

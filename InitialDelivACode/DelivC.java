@@ -1,7 +1,9 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 // Class DelivC does the work for deliverable DelivC of the Prog340
 
@@ -14,10 +16,11 @@ public class DelivC {
     ArrayList<Node> usedStartNodes = new ArrayList();
     int shortestDistance;
     int toursGenerated = 0;
+    private boolean printEveryTour = false; // set to true to print every tour
 
     public DelivC(File in, Graph gr) {
         inputFile = in;
-        g = gr;
+        g = gr; // the graph at gr is never used in delivC
 
         // Get output file name.
         String inputFileName = inputFile.toString();
@@ -34,32 +37,33 @@ public class DelivC {
             System.err.format("Exception: %s%n", x);
             System.exit(0);
         }
+        // setup output string builder
         StringBuilder messageOutput = new StringBuilder();
         messageOutput.append("\n********************************\nOnly the improved tours:\n");
-        //read graph.
-        //add fake edges.
-        //Only do this when deliv C is running.
+
+        //make separate graph with fake edges
+        g = makeFakeEdgeGraph();
 
         //Print first tour.
         ArrayList<Node> firstTour = g.getNodeList();
-        usedStartNodes.add(firstTour.get(0));
         Tour currentTour = getTour(firstTour);
         messageOutput.append(currentTour);
+        usedStartNodes.add(firstTour.get(0));
 
-        //Generate random tour based on first tour.
+        // Set shortest distance to the firstTour distance
         this.shortestDistance = currentTour.getDistance();
+
+        //Generate random tours based on first tour.
         randomRestart(messageOutput, firstTour);
 
-
-		ArrayList <Node> newLocalSearch = tourGenerator();
-        //stop generating tours.
-		while (newLocalSearch != null){
+        ArrayList<Node> newLocalSearch = tourGenerator();
+        while (newLocalSearch != null) { //stop generating tours after all nodes have been used for a starting node
             //Start local search from a different place also known as randomRestart
             randomRestart(messageOutput, newLocalSearch);
             newLocalSearch = tourGenerator();
         }
 
-		// Print output to console and write to file
+        // Print output to console and write to file
         System.out.println(messageOutput);
         output.println(messageOutput);
         output.flush();
@@ -68,32 +72,33 @@ public class DelivC {
     public ArrayList<Node> tourGenerator() {
         ArrayList<Node> nodeList = g.nodeList;
         Node newStartNode;
-		boolean allNodesUsed = (usedStartNodes.size() == nodeList.size());
-		boolean newNodefound = false;
-		do {
+        boolean allNodesUsed = (usedStartNodes.size() == nodeList.size());
+        boolean newNodefound = false;
+        do {
             newStartNode = nodeList.get(new Random().nextInt(nodeList.size()));
             newNodefound = !usedStartNodes.contains(newStartNode);
 
-        } while ( !newNodefound && !allNodesUsed
+        } while (!newNodefound && !allNodesUsed
 
         );
-		if(!allNodesUsed){
-		    usedStartNodes.add(newStartNode);
-			ArrayList<Node> randomTour = new ArrayList();
-			randomTour.add(newStartNode);
-			for (Node node: nodeList) {
-				if(!node.getAbbrev().equals(newStartNode.getAbbrev())){
-					randomTour.add(node);
-				}
-			}
-			toursGenerated++;
-			return randomTour;
-		}
-		return null;
+        if (!allNodesUsed) {
+            usedStartNodes.add(newStartNode);
+            ArrayList<Node> randomTour = new ArrayList();
+            randomTour.add(newStartNode);
+            for (Node node : nodeList) {
+                if (!node.getAbbrev().equals(newStartNode.getAbbrev())) {
+                    randomTour.add(node);
+                }
+            }
+            toursGenerated++;
+            return randomTour;
+        }
+        return null;
     }
 
     private void randomRestart(StringBuilder messageOutput, ArrayList<Node> firstTour) {
-        int tryCounter = 10;
+        int doubleNumberOfNodes = firstTour.size() * 2;
+        int tryCounter = doubleNumberOfNodes > 25 ? doubleNumberOfNodes : 25;
         ArrayList<Node> temptour = firstTour;
         //print next better tour.
         while (tryCounter > 0) {
@@ -103,7 +108,7 @@ public class DelivC {
             if (firstRandomTour.getDistance() < shortestDistance) {
                 messageOutput.append(firstRandomTour);
                 shortestDistance = firstRandomTour.getDistance();
-            } else {
+            } else { // decrement counter if better tour is not found
                 tryCounter--;
             }
         }
@@ -126,8 +131,10 @@ public class DelivC {
         Edge edgeHome = g.getEdge(lastHead, lastTail);
         totalDistance += edgeHome.getDist();
         String printTour = String.format("Dist = %d: %s\n", totalDistance, currentTourAbrev);
-        //Uncomment the line bellow to print every tour.
-		System.out.print(printTour);
+
+        if (printEveryTour) {//to print every tour.
+            System.out.print(printTour);
+        }
         return new Tour(totalDistance, printTour);
     }
 
@@ -171,6 +178,63 @@ public class DelivC {
         public String toString() {
             return this.tour;
         }
+    }
+
+    private Graph makeFakeEdgeGraph() {
+        Graph fakeEdgeGraph = new Graph();
+
+        // read text file
+        try (Scanner sc = new Scanner(inputFile)) {
+
+            // First line special:  It contains "~", and "val", and the nodes with the edges.
+            String firstLine = sc.nextLine();
+            String[] splitString = firstLine.split(" +");
+
+            // Ignore first two fields of first line,  Every other field is a node.
+            for (int i = 2; i < splitString.length; i++) {
+                Node n = new Node(splitString[i]);
+                fakeEdgeGraph.addNode(n);
+            }
+
+            // Every other line gives the name and value of the Node, and any edges.
+            int nodeIndex = 0;
+            ArrayList<Node> nodeList = fakeEdgeGraph.getNodeList();
+
+            while (sc.hasNextLine()) {
+                String nextLine = sc.nextLine();
+                splitString = nextLine.split(" +");
+                if (splitString.length > nodeList.size() + 2)
+                    throw new RuntimeException("File row has too many indexes. Likely caused by spaces in the city name: " + splitString[0]);
+
+                Node n = nodeList.get(nodeIndex);
+                n.setName(splitString[0]);
+                n.setVal(splitString[1]);
+
+                for (int i = 2; i < splitString.length; i++) {
+                    if (!splitString[i].equals("~")) {
+                        Node head = nodeList.get(i - 2);
+                        Edge e = new Edge(n, head, splitString[i]);
+                        e.setDist(splitString[i]);
+                        fakeEdgeGraph.addEdge(e);
+                        n.addOutgoingEdge(e);
+                        head.addIncomingEdge(e);
+                    } else { // add fake edge where there is no edge "~"
+                        int headIndexForFakeEdge = i - 2;
+                        Node head = nodeList.get(headIndexForFakeEdge);
+                        Edge e = new Edge(n, head, "100000");
+                        e.setDist("100000");
+                        fakeEdgeGraph.addEdge(e);
+                        n.addOutgoingEdge(e);
+                        head.addIncomingEdge(e);
+                    }
+                }
+                nodeIndex++;
+
+            }
+        } catch (FileNotFoundException ex) {
+
+        }
+        return fakeEdgeGraph;
     }
 }
 

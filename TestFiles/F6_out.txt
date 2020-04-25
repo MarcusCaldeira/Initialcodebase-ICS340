@@ -1,3 +1,0 @@
-TSP tour:
-B--> C--> D--> E--> A--> B
-Distance = 200009
