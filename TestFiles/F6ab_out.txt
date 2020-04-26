@@ -1,0 +1,36 @@
+L[0]   A   B   C   D   E                   A       B       C       D       E
+   A   0   3   2   ~   5           A       ~    null    null       ~    null
+   B   4   0   5   3   ~           B    null       ~    null    null       ~
+   C   9   ~   0   ~   ~           C    null       ~       ~       ~       ~
+   D   6   ~   5   0   1           D    null       ~    null       ~    null
+   E   ~   6   4   2   0           E       ~    null    null    null       ~
+
+L[1]   A   B   C   D   E                   A       B       C       D       E
+   A   0   3   2   ~   5           A       ~    null    null       ~    null
+   B   4   0   5   3   ~           B    null       ~    null    null       ~
+   C   9   ~   0   ~   ~           C    null       ~       ~       ~       ~
+   D   6   ~   5   0   1           D    null       ~    null       ~    null
+   E   ~   6   4   2   0           E       ~    null    null    null       ~
+
+L[2]   A   B   C   D   E                   A       B       C       D       E
+   A   0   3   2   ~   5           A       ~    null    null       ~    null
+   B   4   0   5   3   ~           B    null       ~    null    null       ~
+   C   9   ~   0   ~   ~           C    null       ~       ~       ~       ~
+   D   6   ~   5   0   1           D    null       ~    null       ~    null
+   E   ~   6   4   2   0           E       ~    null    null    null       ~
+
+L[3]   A   B   C   D   E                   A       B       C       D       E
+   A   0   3   2   ~   5           A       ~    null    null       ~    null
+   B   4   0   5   3   ~           B    null       ~    null    null       ~
+   C   9   ~   0   ~   ~           C    null       ~       ~       ~       ~
+   D   6   ~   5   0   1           D    null       ~    null       ~    null
+   E   ~   6   4   2   0           E       ~    null    null    null       ~
+
+L[4]   A   B   C   D   E                   A       B       C       D       E
+   A   0   3   2   ~   5           A       ~    null    null       ~    null
+   B   4   0   5   3   ~           B    null       ~    null    null       ~
+   C   9   ~   0   ~   ~           C    null       ~       ~       ~       ~
+   D   6   ~   5   0   1           D    null       ~    null       ~    null
+   E   ~   6   4   2   0           E       ~    null    null    null       ~
+
+
